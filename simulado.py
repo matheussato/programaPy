@@ -1,4 +1,7 @@
 
+from traceback import print_tb
+
+
 def ehTriangulo(lado1,lado2,lado3):
     return lado1 < lado2 + lado3 and lado2 < lado1 + lado3 and lado3 < lado1 + lado2
     # if (lado1 < lado2 + lado3 and lado2 < lado1 + lado3 and lado3 < lado1 + lado2):
@@ -23,17 +26,10 @@ def tipoTriangulo3(lado1,lado2,lado3):
     else:return False
        
      
-while True:
-    
-    print("""   
-                MENU
-                
-            1- Digitar valor dos lados
-            2- Sair
-           """)
-    opcao = int(input("Digite a opção desejada= "))
+opcao = 1
+while opcao == 1:
 
-    if opcao == 1:
+    
         l1 = int(input("Digite um valor do lado= "))
         l2 = int(input("Digite um valor do lado= "))
         l3 = int(input("Digite um valor do lado= "))
@@ -48,8 +44,21 @@ while True:
             
         else:print("Não é triângulo")        
         
-    elif opcao == 2:
-        break
+    
+
+
+        opcao = int(input("""Continuar?
+        1- Sim-> 
+        2 - Não-> """))
+
+        while opcao != 1 and opcao != 2:
+            print(f"Você digitou  {opcao}, digite 1 ou 2: ", end="")
+            opcao = int(input())
+
+        if opcao == 2:
+            break
+            
+print("Programa Finalizado")
 
 
 
